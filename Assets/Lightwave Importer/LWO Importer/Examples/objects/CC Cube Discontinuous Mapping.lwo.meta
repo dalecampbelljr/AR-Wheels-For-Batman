@@ -1,0 +1,48 @@
+fileFormatVersion: 2
+guid: 58e77424c037643409791edf594e184b
+ScriptedImporter:
+  fileIDToRecycleName:
+    100004: CC Cube Discontinuous Mapping/CC Cube Discontinuous Mapping
+    100006: CC Cube Discontinuous Mapping/CC Cube Discontinuous Mapping/Cube
+    400004: CC Cube Discontinuous Mapping/CC Cube Discontinuous Mapping/Transform
+    400006: CC Cube Discontinuous Mapping/CC Cube Discontinuous Mapping/Cube/Transform
+    2100000: Material1
+    2100002: Material2
+    2100004: Material3
+    2100006: Material4
+    2100008: Material5
+    2100010: Material0
+    2300002: CC Cube Discontinuous Mapping/CC Cube Discontinuous Mapping/Cube/MeshRenderer
+    3300002: CC Cube Discontinuous Mapping/CC Cube Discontinuous Mapping/Cube/MeshFilter
+    4300000: layer 0_mesh
+    11400000: CC Cube Discontinuous Mapping/CC Cube Discontinuous Mapping/MonoBehaviour-VirtualEscapes.Common.Importers.LWOHierarchy
+    100100002: CC Cube Discontinuous Mapping
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 63faad274fdf34be6a25f0486dff8eba, type: 3}
+  generateTangents: 0
+  importBlendShapes: 1
+  catmullClarkeIterations: 3
+  indexFormat: 0
+  normalGenerationMethod: 0
+  smoothVaryingSurfaces: 0
+  useSmoothingAngles: 1
+  showImportTime: 0
+  warningMask: 5
+  textureOverridesBaseValue: 1
+  useHDRMaterials: 0
+  remappedMaterials: []
+  autoRemapMatchingNames: 0
+  materialsAutoRemappedCount: 0
+  remappedMaterialsList: []
+  materialNames:
+  - Back
+  - Right
+  - Left
+  - Forward
+  - Top
+  - Bottom
+  hasBlendShapes: 0
+  hasSubdivSurfaces: 1

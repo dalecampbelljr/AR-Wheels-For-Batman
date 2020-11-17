@@ -1,0 +1,38 @@
+fileFormatVersion: 2
+guid: 3cc9bbc8071ad42559e6778b210c0bd3
+ScriptedImporter:
+  fileIDToRecycleName:
+    100000: Cube/Cube
+    100002: Cube/Cube/layer0
+    400000: Cube/Cube/Transform
+    400002: Cube/Cube/layer0/Transform
+    2100000: Material0
+    2300000: Cube/Cube/layer0/MeshRenderer
+    3300000: Cube/Cube/layer0/MeshFilter
+    4300000: layer 0_mesh
+    11400000: Cube/Cube/MonoBehaviour-VirtualEscapes.Common.Importers.LWOHierarchy
+    100100000: Cube
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 63faad274fdf34be6a25f0486dff8eba, type: 3}
+  generateTangents: 0
+  importBlendShapes: 1
+  catmullClarkeIterations: 2
+  indexFormat: 0
+  normalGenerationMethod: 0
+  smoothVaryingSurfaces: 0
+  useSmoothingAngles: 1
+  showImportTime: 0
+  warningMask: 5
+  textureOverridesBaseValue: 1
+  useHDRMaterials: 0
+  remappedMaterials: []
+  autoRemapMatchingNames: 0
+  materialsAutoRemappedCount: 0
+  remappedMaterialsList: []
+  materialNames:
+  - Default
+  hasBlendShapes: 0
+  hasSubdivSurfaces: 0

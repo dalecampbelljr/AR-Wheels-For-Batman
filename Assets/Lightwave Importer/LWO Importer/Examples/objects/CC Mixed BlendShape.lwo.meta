@@ -1,0 +1,38 @@
+fileFormatVersion: 2
+guid: dd823389549f1483d9de0575459e2164
+ScriptedImporter:
+  fileIDToRecycleName:
+    100000: CC Mixed BlendShape/CC Mixed BlendShape
+    100002: CC Mixed BlendShape/CC Mixed BlendShape/layer0
+    400000: CC Mixed BlendShape/CC Mixed BlendShape/Transform
+    400002: CC Mixed BlendShape/CC Mixed BlendShape/layer0/Transform
+    2100000: Material0
+    3300000: CC Mixed BlendShape/CC Mixed BlendShape/layer0/MeshFilter
+    4300000: layer 0_mesh
+    11400000: CC Mixed BlendShape/CC Mixed BlendShape/MonoBehaviour-VirtualEscapes.Common.Importers.LWOHierarchy
+    13700000: CC Mixed BlendShape/CC Mixed BlendShape/layer0/SkinnedMeshRenderer
+    100100000: CC Mixed BlendShape
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 63faad274fdf34be6a25f0486dff8eba, type: 3}
+  generateTangents: 0
+  importBlendShapes: 1
+  catmullClarkeIterations: 3
+  indexFormat: 0
+  normalGenerationMethod: 0
+  smoothVaryingSurfaces: 0
+  useSmoothingAngles: 1
+  showImportTime: 0
+  warningMask: 5
+  textureOverridesBaseValue: 1
+  useHDRMaterials: 0
+  remappedMaterials: []
+  autoRemapMatchingNames: 0
+  materialsAutoRemappedCount: 0
+  remappedMaterialsList: []
+  materialNames:
+  - Checks
+  hasBlendShapes: 1
+  hasSubdivSurfaces: 1

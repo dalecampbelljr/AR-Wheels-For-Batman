@@ -1,0 +1,36 @@
+fileFormatVersion: 2
+guid: f47957e084cc02d45b4838f251da37fe
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 63faad274fdf34be6a25f0486dff8eba, type: 3}
+  generateTangents: 0
+  importBlendShapes: 1
+  catmullClarkeIterations: 1
+  indexFormat: 0
+  generateUV2: 0
+  uv2Separation: 0.02
+  generateLWOHierarchy: 1
+  normalGenerationMethod: 0
+  smoothVaryingSurfaces: 0
+  useSmoothingAngles: 1
+  showImportTime: 0
+  warningMask: 5
+  textureOverridesBaseValue: 1
+  remappedMaterials: []
+  autoRemapMatchingNames: 0
+  materialsAutoRemappedCount: 0
+  remappedMaterialsList: []
+  materialNames:
+  - Tire tread
+  - Chrome
+  - InteriorColor
+  - Tire sidewall
+  importCount: 1
+  hasBlendShapes: 0
+  hasSubdivSurfaces: 1
+  hasNormalMappedMaterials: 0

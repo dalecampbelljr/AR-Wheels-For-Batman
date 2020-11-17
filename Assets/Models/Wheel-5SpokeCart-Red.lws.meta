@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: a1c1a08ae94a15d4ab83a018bf3f9352
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 610250268, guid: 0888e564a264446fca11da5d2fc61257, type: 3}
+  lwsData: {instanceID: 0}
+  hasImported: 1
+  createTimeline: 1
+  customFrameRange:
+    _start: 0
+    _end: 120
+  frameRangeType: 0
+  savedScenePath: 
+  optimiseKeyframes: 1
+  drawBones: 0
+  buildErrorInvalidModelCount: 0
+  importFilePathWarningCount: 0
+  importFilePathErrorCount: 0

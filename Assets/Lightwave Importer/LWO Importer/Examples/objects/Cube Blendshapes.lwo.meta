@@ -1,0 +1,38 @@
+fileFormatVersion: 2
+guid: 144e32ae68e7546bcb2cc53f8140a9e5
+ScriptedImporter:
+  fileIDToRecycleName:
+    100000: Cube Blendshapes/Cube Blendshapes
+    100002: Cube Blendshapes/Cube Blendshapes/layer0
+    400000: Cube Blendshapes/Cube Blendshapes/Transform
+    400002: Cube Blendshapes/Cube Blendshapes/layer0/Transform
+    2100000: Material0
+    3300000: Cube Blendshapes/Cube Blendshapes/layer0/MeshFilter
+    4300000: layer 0_mesh
+    11400000: Cube Blendshapes/Cube Blendshapes/MonoBehaviour-VirtualEscapes.Common.Importers.LWOHierarchy
+    13700000: Cube Blendshapes/Cube Blendshapes/layer0/SkinnedMeshRenderer
+    100100000: Cube Blendshapes
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 63faad274fdf34be6a25f0486dff8eba, type: 3}
+  generateTangents: 1
+  importBlendShapes: 1
+  catmullClarkeIterations: 2
+  indexFormat: 0
+  normalGenerationMethod: 0
+  smoothVaryingSurfaces: 0
+  useSmoothingAngles: 1
+  showImportTime: 0
+  warningMask: 5
+  textureOverridesBaseValue: 1
+  useHDRMaterials: 0
+  remappedMaterials: []
+  autoRemapMatchingNames: 0
+  materialsAutoRemappedCount: 0
+  remappedMaterialsList: []
+  materialNames:
+  - Dirt
+  hasBlendShapes: 1
+  hasSubdivSurfaces: 0

@@ -1,0 +1,56 @@
+fileFormatVersion: 2
+guid: ed6489cb704d44279a2b9bc02268ca51
+ScriptedImporter:
+  fileIDToRecycleName:
+    100000: VertexColors/VertexColors
+    100002: VertexColors/VertexColors/Mesh with vertex colors
+    400000: VertexColors/VertexColors/Transform
+    400002: VertexColors/VertexColors/Mesh with vertex colors/Transform
+    2300000: VertexColors/VertexColors/Mesh with vertex colors/MeshRenderer
+    3300000: VertexColors/VertexColors/Mesh with vertex colors/MeshFilter
+    4300000: layer 0_mesh
+    11400000: VertexColors/VertexColors/MonoBehaviour-VirtualEscapes.Common.Importers.LWOHierarchy
+    100100000: VertexColors
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 63faad274fdf34be6a25f0486dff8eba, type: 3}
+  generateTangents: 1
+  importBlendShapes: 1
+  catmullClarkeIterations: 2
+  indexFormat: 0
+  normalGenerationMethod: 0
+  smoothVaryingSurfaces: 0
+  useSmoothingAngles: 1
+  showImportTime: 0
+  warningMask: 5
+  textureOverridesBaseValue: 1
+  useHDRMaterials: 0
+  remappedMaterials: []
+  autoRemapMatchingNames: 0
+  materialsAutoRemappedCount: 0
+  remappedMaterialsList:
+  - name: BSDF Material
+    material: {fileID: 2100000, guid: f9e90955377f14dc584181abb430dbbf, type: 2}
+    isMissing: 0
+    isAutoMapped: 0
+  - name: Standard Textured Smooth
+    material: {fileID: 2100000, guid: 58350ca129a164600ba94ae74e3cad89, type: 2}
+    isMissing: 0
+    isAutoMapped: 0
+  - name: Standard Material
+    material: {fileID: 2100000, guid: a61926afec997403bbd83139dc1404e1, type: 2}
+    isMissing: 0
+    isAutoMapped: 0
+  - name: BSDF Material (Node Network)
+    material: {fileID: 2100000, guid: 0c4a3003db3984e1eb18616d8c95e783, type: 2}
+    isMissing: 0
+    isAutoMapped: 0
+  materialNames:
+  - BSDF Material
+  - Standard Textured Smooth
+  - Standard Material
+  - BSDF Material (Node Network)
+  hasBlendShapes: 0
+  hasSubdivSurfaces: 0

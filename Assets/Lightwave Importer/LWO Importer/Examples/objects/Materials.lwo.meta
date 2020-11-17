@@ -1,0 +1,42 @@
+fileFormatVersion: 2
+guid: 4837286881b064c27964830e8249e49d
+ScriptedImporter:
+  fileIDToRecycleName:
+    100000: Materials/Materials
+    100002: Materials/Materials/Multiple Material Mesh
+    400000: Materials/Materials/Transform
+    400002: Materials/Materials/Multiple Material Mesh/Transform
+    2100000: Material1
+    2100002: Material2
+    2100004: Material0
+    2300000: Materials/Materials/Multiple Material Mesh/MeshRenderer
+    3300000: Materials/Materials/Multiple Material Mesh/MeshFilter
+    4300000: layer 0_mesh
+    11400000: Materials/Materials/MonoBehaviour-VirtualEscapes.Common.Importers.LWOHierarchy
+    100100000: Materials
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 63faad274fdf34be6a25f0486dff8eba, type: 3}
+  generateTangents: 1
+  importBlendShapes: 1
+  catmullClarkeIterations: 2
+  indexFormat: 0
+  normalGenerationMethod: 0
+  smoothVaryingSurfaces: 0
+  useSmoothingAngles: 1
+  showImportTime: 0
+  warningMask: 5
+  textureOverridesBaseValue: 1
+  useHDRMaterials: 0
+  remappedMaterials: []
+  autoRemapMatchingNames: 0
+  materialsAutoRemappedCount: 0
+  remappedMaterialsList: []
+  materialNames:
+  - BSDF Material
+  - BSDF Material (Node Network)
+  - Standard Material
+  hasBlendShapes: 0
+  hasSubdivSurfaces: 0
