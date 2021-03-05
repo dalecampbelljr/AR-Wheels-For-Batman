@@ -82,21 +82,21 @@ Plugin ViewportObjectHandler 4 .VPR
 ""
 0
 EndPlugin
-ColorSpaceViewer "Linear" "none"
-ColorSpaceSurfaceColor "Linear" "none"
-ColorSpaceLightColor "Linear" "none"
-ColorSpacePaletteFiles "Linear" "none"
-ColorSpace8BitFiles "Linear" "none"
+ColorSpaceViewer "sRGB" "none"
+ColorSpaceSurfaceColor "sRGB" "none"
+ColorSpaceLightColor "sRGB" "none"
+ColorSpacePaletteFiles "sRGB" "none"
+ColorSpace8BitFiles "sRGB" "none"
 ColorSpaceFloatFiles "Linear" "none"
 ColorSpaceAlpha "Linear" "none"
-ColorSpaceOutput "Linear" "none"
+ColorSpaceOutput "sRGB" "none"
 ColorSpaceOutputAlpha "Linear" "none"
 ColorSpaceOutputVPR "Linear" "none"
 ColorSpaceOutputVPRAlpha "Linear" "none"
 ColorSpaceAutoSense 1
-ColorSpace8BitToFloat 0
-ColorSpaceCorrectOpenGL 0
-ColorSpaceAffectPicker 0
+ColorSpace8BitToFloat 1
+ColorSpaceCorrectOpenGL 1
+ColorSpaceAffectPicker 1
 FirstBackgroundImageSyncFrame 0
 BufferList
 { BufferList
@@ -726,7 +726,7 @@ NoiseFilter
 }
 EndAttribute
 NoiseFilterGlobal 0
-NavigationDesiredDevice Mouse
+NavigationDesiredDevice Keyboard
 Plugin GlobalIlluminationHandler 1 BruteForce
 { Attributes
   { Metadata
@@ -1048,7 +1048,295 @@ Plugin VolumeIntegratorHandler 1 VolumeIntegrator
 }
 EndPlugin
 
-LoadObjectLayer 1 10000000 Wheel-5SpokeCart-Red.lwo
+LoadObjectLayer 1 10000000 F:AR-Wheels-For-Batman/Assets/Models/Cart_W_Stock_WheelsFINAL.lwo
+ChangeObject 0
+ShowObject 7 7
+Group 0
+ObjectMotion
+NumChannels 9
+Channel 0
+{ Envelope
+  1
+  Key 0 0 0 0 0 0 0 0 0
+  Behaviors 1 1
+}
+Channel 1
+{ Envelope
+  1
+  Key 0 0 0 0 0 0 0 0 0
+  Behaviors 1 1
+}
+Channel 2
+{ Envelope
+  1
+  Key 0 0 0 0 0 0 0 0 0
+  Behaviors 1 1
+}
+Channel 3
+{ Envelope
+  1
+  Key 0 0 0 0 0 0 0 0 0
+  Behaviors 1 1
+}
+Channel 4
+{ Envelope
+  1
+  Key 0 0 0 0 0 0 0 0 0
+  Behaviors 1 1
+}
+Channel 5
+{ Envelope
+  1
+  Key 0 0 0 0 0 0 0 0 0
+  Behaviors 1 1
+}
+Channel 6
+{ Envelope
+  1
+  Key 1 0 0 0 0 0 0 0 0
+  Behaviors 1 1
+}
+Channel 7
+{ Envelope
+  1
+  Key 1 0 0 0 0 0 0 0 0
+  Behaviors 1 1
+}
+Channel 8
+{ Envelope
+  1
+  Key 1 0 0 0 0 0 0 0 0
+  Behaviors 1 1
+}
+RotationOrder 3
+IKInitCustomFrame 0
+GoalStrength 1
+IKFKBlending 0
+IKSoftMin 0.25
+IKSoftMax 0.75
+CtrlPosItemBlend 1
+CtrlRotItemBlend 1
+CtrlScaleItemBlend 1
+
+PathAlignLookAhead 0.033
+PathAlignMaxLookSteps 10
+PathAlignReliableDist 0.001
+PivotPosition 0 0 0
+PivotRotation 0 0 0
+SplineFlags 0
+SplineFit 0
+IKInitialState 0
+UseIKChainValues 1
+SubPatchLevel 3 3
+APSDisplay
+{ APS
+  Version 1
+  Method 0
+  { VParm
+    { ObjectLevel
+      0
+      { VariantParameter
+        3
+        0
+        { ParameterValue
+          3
+          0
+        }
+      }
+    }
+    { PolygonLevel
+      0
+      { VariantParameter
+        3
+        0
+        { ParameterValue
+          3
+          0
+        }
+      }
+    }
+    { PolygonPixelSize
+      0
+      { VariantParameter
+        3
+        0
+        { ParameterValue
+          256
+          0
+        }
+      }
+    }
+  }
+}
+APSRender
+{ APS
+  Version 1
+  Method 0
+  { VParm
+    { ObjectLevel
+      0
+      { VariantParameter
+        3
+        0
+        { ParameterValue
+          3
+          0
+        }
+      }
+    }
+    { PolygonLevel
+      0
+      { VariantParameter
+        3
+        0
+        { ParameterValue
+          3
+          0
+        }
+      }
+    }
+    { PolygonPixelSize
+      0
+      { VariantParameter
+        3
+        0
+        { ParameterValue
+          256
+          0
+        }
+      }
+    }
+  }
+}
+BoneMode 2
+NumLimitedBones 4
+EndBones
+Plugin MeshDeformerHandler 1 _Morphing
+{ Morphing
+  Version 1
+  { MorphAmount
+    MorphAmountValue 0
+  }
+  MorphTarget 0
+  MorphSurfaces 0
+  MTSEMorphing 0
+}
+EndPlugin
+PluginEnabled 0
+Plugin MeshDeformerHandler 2 _Bones
+EndPlugin
+Plugin MeshModifierHandler 3 _Subdivision
+EndPlugin
+Plugin MeshDeformerHandler 4 _NodalDisplacement
+{ NodalDisplacement
+  Version 1
+  { Nodes
+    { Root
+      Location 0 0
+      Zoom 1
+      Disabled 1
+    }
+    Version 1
+    { Nodes
+      Server "Displacement"
+      { Tag
+        RealName "Displacement"
+        Name "Displacement"
+        Coordinates -10 -10
+        Mode 1
+        Selected 0
+        { Data
+        }
+        Preview ""
+        Placement 2
+      }
+      Server "Input"
+      { Tag
+        RealName "Input"
+        Name "Input"
+        Coordinates -30 -10
+        Mode 1
+        Selected 0
+        { Data
+        }
+        Preview "Object Position"
+        Placement 1
+      }
+    }
+    { Connections
+    }
+  }
+  Mode 0
+  CurPosInWorld 1
+}
+EndPlugin
+PluginEnabled 0
+Plugin MeshDeformerHandler 5 _SurfaceDisplacement
+{ SurfaceDisplacement
+  Version 1
+  BumpDistance 0
+}
+EndPlugin
+PluginEnabled 0
+Plugin MeshDeformerHandler 6 _DisplacementMap
+{ DisplacementMap
+  Version 1
+}
+EndPlugin
+PluginEnabled 0
+UseObjGI 0
+ObjGIBruteForceRays 1
+ObjGIRadiosityRays 128
+ObjGISecondaryBounceRays 64
+ObjGIRadiosityTolerance 0.060307
+ObjGIMinPixelSpacing 2.000000
+ObjGIMaxPixelSpacing 64.000000
+ShadowOptions 7
+PolygonEdgeFlags 0
+PolygonEdgeThickness 1 1 1 1 1 1 1
+PolygonEdgeColor 0 0 0
+PolygonEdgesZScale 1
+NodeEdges 0
+{ NodalEdge_Block
+  { Root
+    Location 0 0
+    Zoom 1
+    Disabled 1
+  }
+  Version 1
+  { Nodes
+    Server "Edge"
+    { Tag
+      RealName "Edge"
+      Name "Edge"
+      Coordinates -10 -10
+      Mode 1
+      Selected 0
+      { Data
+      }
+      Preview ""
+      Placement 2
+    }
+    Server "Input"
+    { Tag
+      RealName "Input"
+      Name "Input"
+      Coordinates -30 -10
+      Mode 1
+      Selected 0
+      { Data
+      }
+      Preview "Item ID"
+      Placement 1
+    }
+  }
+  { Connections
+  }
+}
+Plugin PrimitiveHandler 1 MeshPrimitive
+EndPlugin
+
+LoadObjectLayer 2 10000001 F:AR-Wheels-For-Batman/Assets/Models/Cart_W_Stock_WheelsFINAL.lwo
 ChangeObject 0
 ShowObject 7 7
 Group 0
@@ -1364,23 +1652,6 @@ RadiositySaveEachFrame 0
 RadiosityCacheFilePath Radiosity/radiosity.cache
 PixelFilterForceMT 0
 ExternalRenderer .VPR
-Plugin ExtRendererHandler 1 .VPR
-0
-20
-1
-0
-0
-1
-0
-1
-0
-0
-0.25 0.25 0.25
-1
-"Sphere"
-""
-0
-EndPlugin
 UseZminMax 1
 ZMinimum 0
 ZMaximum 1000000
@@ -1685,7 +1956,7 @@ Plugin LightHandler 1 EnvironmentLight
 }
 EndPlugin
 
-AddCamera 30000000
+AddCamera 30000001
 CameraName Camera
 ShowCamera 1 14
 CameraMotion
@@ -1693,25 +1964,25 @@ NumChannels 6
 Channel 0
 { Envelope
   1
-  Key 0 0 0 0 0 0 0 0 0
+  Key 2.5098924636840815872 0 0 0 0 0 0 0 0
   Behaviors 1 1
 }
 Channel 1
 { Envelope
   1
-  Key 0 0 0 0 0 0 0 0 0
+  Key 0.066198199987411499023 0 0 0 0 0 0 0 0
   Behaviors 1 1
 }
 Channel 2
 { Envelope
   1
-  Key -1.4840385913848876953 0 0 0 0 0 0 0 0
+  Key -0.0019455989822745321013 0 0 0 0 0 0 0 0
   Behaviors 1 1
 }
 Channel 3
 { Envelope
   1
-  Key 0 0 0 0 0 0 0 0 0
+  Key -1.5707963705062866211 0 0 0 0 0 0 0 0
   Behaviors 1 1
 }
 Channel 4
@@ -1898,10 +2169,10 @@ LightSamples 1
 DataOverlayLabel  
 OutputFilenameFormat 1
 SaveRGB 1
-SaveRGBImagesPrefix Y:\P3 Client Content\Michael Batman - Rubbermadewheelcarts.com\Renders\Final_Render_
+SaveRGBImagesPrefix Y:\The_World_According_to_the_Bagleys_Project -2015\Renders\Final_Render_
 RGBImageSaver LW_PNG24(.png)
 SaveAlpha 0
-SaveAlphaImagesPrefix Y:\P3 Client Content\Michael Batman - Rubbermadewheelcarts.com\Renders\Alpha_
+SaveAlphaImagesPrefix Y:\The_World_According_to_the_Bagleys_Project -2015\Renders\Alpha_
 AlphaImageSaver LW_PNG24(.png)
 MultiLayerEnabled 0
 MultiLayerUseOutputPath 1
@@ -1910,15 +2181,15 @@ MultiLayerFilename
 
 ViewConfiguration 0
 DefineView 0
-ViewType 9
+ViewType 7
 ViewLevel 5
 ViewAimpoint 0 0 0
+ViewRotation -17.2 18 0
 ViewZoomFactor 4
 ViewXRay 1
 ViewMBDofPreview 0
 ViewHeadlight 0
 ViewXYWidthHeight 0 34 500 300
-ViewCameraItem 30000000
 ViewFOVZoom 4
 DefineView 1
 ViewType 1
@@ -1952,12 +2223,12 @@ ViewXYWidthHeight 0 34 500 300
 ViewFOVZoom 4
 
 GridNumber 80
-GridSize 0.2
+GridSize 0.5
 CameraViewBG 0
 ShowMotionPath 1
 ShowFogRadius 0
-ShowFogEffect 0
-ShowFieldChart 0
+ShowFogEffect 1
+ShowFieldChart 1
 OverlayColor_fv 0 0 0
 MeshBackgroundGroup 1
 Plugin VirtualStudio 1 VirtualStudio
@@ -1973,7 +2244,7 @@ Plugin VirtualStudio 1 VirtualStudio
 }
 EndPlugin
 
-CurrentObject 0
+CurrentObject 1
 CurrentLight 0
 CurrentCamera 0
 GraphEditorData
@@ -1985,4 +2256,4 @@ GraphEditorData
 ImageEditorData
 NumberOfClips 0
 
-ContentDir Y:P3 Client Content/Michael Batman - Rubbermadewheelcarts.com
+ContentDir Y:The_World_According_to_the_Bagleys_Project -2015
