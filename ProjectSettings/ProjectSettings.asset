@@ -165,6 +165,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.BetterMadeCartwheels.BettermadeCartwheelsAR
+    Standalone: com.BetterMadeCartwheels.BettermadeCartwheelsAR
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 24
