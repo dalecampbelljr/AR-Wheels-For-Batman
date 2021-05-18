@@ -9,6 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/_Main.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
+    com.unity.mars-ar-foundation-providers.xr_subsystem_settings: {fileID: 11400000,
+      guid: 4a4453edbbabb764baa1a03c20d8d3e5, type: 2}
     com.unity.xr.arcore.PlayerSettings: {fileID: 11400000, guid: 202efd48e1ff65e488ed73b234496907,
       type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 16990666b68e26b4b9d17c59f53127cd,

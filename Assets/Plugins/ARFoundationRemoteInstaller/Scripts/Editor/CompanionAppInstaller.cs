@@ -19,6 +19,7 @@ namespace ARFoundationRemote.Editor {
     public class CompanionAppInstaller: IPreprocessBuildWithReport, IPostprocessBuildWithReport {
         const string appName = "ARCompanion";
         const string arCompanionDefine = "AR_COMPANION";
+        static bool modifyAppId;
 
         public int callbackOrder => 0;
 
@@ -30,9 +31,16 @@ namespace ARFoundationRemote.Editor {
 
         void IPreprocessBuildWithReport.OnPreprocessBuild(BuildReport report) {
             if (isBuildingCompanionApp(report)) {
-                applicationIdentifier = removeAppName(applicationIdentifier) + appName;
+                if (modifyAppId) {
+                    applicationIdentifier = removeAppName(applicationIdentifier) + appName;
+                }
+                
                 PlayerSettings.productName = appName + removeAppName(PlayerSettings.productName);
                 toggleDefine(arCompanionDefine, true);
+            } else {
+                if (EditorBuildSettings.scenes.Any(_ => _.path.Contains("ARCompanion.unity"))) {
+                    throw new Exception("AR Foundation Editor Remote: please build the companion app via Installer object by pressing 'Install AR Companion App' or 'Build AR Companion and show in folder' button.");
+                }
             }
         }
 
@@ -54,10 +62,6 @@ namespace ARFoundationRemote.Editor {
         static void restoreChanges() {
             PlayerSettings.productName = removeAppName(PlayerSettings.productName);
             applicationIdentifier = removeAppName(applicationIdentifier);
-            disableCompanionAppDefine();
-        }
-
-        static void disableCompanionAppDefine() {
             toggleDefine(arCompanionDefine, false);
         }
 
@@ -96,15 +100,16 @@ namespace ARFoundationRemote.Editor {
             return s.Replace(appName, "");
         }
 
-        public static void Build(string optionalCompanionAppExtension) {
-            build(buildOptions | BuildOptions.ShowBuiltPlayer, optionalCompanionAppExtension);
+        public static void Build(string optionalCompanionAppExtension, bool modifyAppId) {
+            build(buildOptions | BuildOptions.ShowBuiltPlayer, optionalCompanionAppExtension, modifyAppId);
         }
 
-        public static void BuildAndRun(string optionalCompanionAppExtension) {
-            build(buildOptions | BuildOptions.AutoRunPlayer, optionalCompanionAppExtension);
+        public static void BuildAndRun(string optionalCompanionAppExtension, bool modifyAppId) {
+            build(buildOptions | BuildOptions.AutoRunPlayer, optionalCompanionAppExtension, modifyAppId);
         }
 
-        static void build(BuildOptions options, string optionalCompanionAppExtension) {
+        static void build(BuildOptions options, string optionalCompanionAppExtension, bool _modifyAppId) {
+            modifyAppId = _modifyAppId;
             var listRequest = Client.List(true, true);
             ARFoundationRemoteInstaller.runRequest(listRequest, () => {
                 if (listRequest.Status != StatusCode.Success) {

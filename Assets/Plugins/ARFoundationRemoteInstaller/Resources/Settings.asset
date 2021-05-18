@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd607c3f010ab45a29ecfcf8d5a898ef, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
-  ARCompanionAppIP: 192.168.2.240
+  ARCompanionAppIP: 192.168.2.12
+  editorGameViewSettings:
+    resolutionScale: 0.33333334
+    maxEditorViewFps: 10
   arCompanionSettings:
-    maxOutgoingMessages: 2
     cameraVideoSettings:
       enableVideo: 1
       resolutionScale: 0.33
@@ -25,17 +27,14 @@ MonoBehaviour:
     occlusionSettings:
       maxFPS: 10
       resolutionScale: 0.33
-    meshingSettings:
-      showMeshesInCompanionApp: 1
     faceTrackingSettings:
       maxFPS: 30
       sendVertices: 1
       sendNormals: 1
       sendARKitBlendshapes: 1
-      showFacesInCompanionApp: 1
   packages:
   - displayName: AR Foundation Remote
-    version: 4.7.11
+    version: 4.11.3
     id: com.kyrylokuzyk.arfoundationremote
   - displayName: AR Foundation
     version: 4.0.2
@@ -43,10 +42,15 @@ MonoBehaviour:
   - displayName: ARCore XR Plugin
     version: 4.0.4
     id: com.unity.xr.arcore
+  - displayName: AR Subsystems
+    version: 4.0.1
+    id: com.unity.xr.arsubsystems
   port: 44819
   embeddedImageLibraries: []
   debugSettings:
     logStartupErrors: 1
     showTelepathyLogs: 0
     showTelepathyWarningsAndErrors: 1
-    printCompanionAppIPsToConsole: 1
+    printCompanionAppIPsToConsole: 0
+    warnIfReceiverConnectionWasDestroyed: 0
+    warnIfGameViewIsNotFocused: 1

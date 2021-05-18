@@ -57,7 +57,7 @@ public class ArPrefabSpawner : MonoBehaviour
 
     public LayerMask raycastSelectMask;
 
-    bool interactionsAllowed = true;
+    [SerializeField] bool interactionsAllowed = true;
 
 #if UNITY_EDITOR
     public bool debugPlace;

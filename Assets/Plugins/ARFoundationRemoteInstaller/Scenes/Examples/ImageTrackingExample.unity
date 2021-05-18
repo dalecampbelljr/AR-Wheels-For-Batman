@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -185,8 +185,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   origin: {fileID: 1768708073}
   isUserFacing: 0
-  enableLightEstimation: 1
+  enableLightEstimation: 0
   autofocus: 1
+  enableCameraManager: 1
+  addCameraBackground: 1
+  customCameraMaterial: {fileID: 0}
   arSession: {fileID: 714371366}
   trackingMode: 2
 --- !u!4 &659227667
@@ -338,6 +341,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &1302745900

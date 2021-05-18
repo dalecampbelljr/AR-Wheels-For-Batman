@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEditor;
 
 
@@ -38,18 +36,6 @@ namespace ARFoundationRemote.Editor {
                 default:
                     throw new Exception("Unknown BuildTarget: " + buildTarget);
             }
-        }
-
-        public static IEnumerable<BuildTarget> InstalledBuildTargets => allBuildTargets.Where(isBuildTargetInstalled);
-
-        static IEnumerable<BuildTarget> allBuildTargets => ((BuildTarget[]) Enum.GetValues(typeof(BuildTarget)));
-
-        static bool isBuildTargetInstalled(BuildTarget target) {
-            var moduleManager = System.Type.GetType("UnityEditor.Modules.ModuleManager,UnityEditor.dll");
-            var isPlatformSupportLoaded = moduleManager.GetMethod("IsPlatformSupportLoaded", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic);
-            var getTargetStringFromBuildTarget = moduleManager.GetMethod("GetTargetStringFromBuildTarget", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic);
-
-            return (bool) isPlatformSupportLoaded.Invoke(null,new object[] {(string)getTargetStringFromBuildTarget.Invoke(null, new object[] {target})});
         }
     }
 }

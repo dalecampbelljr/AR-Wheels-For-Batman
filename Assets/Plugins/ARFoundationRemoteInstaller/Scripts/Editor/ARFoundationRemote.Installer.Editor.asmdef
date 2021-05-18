@@ -19,6 +19,11 @@
             "name": "com.kyrylokuzyk.arfoundationremote",
             "expression": "1.0.0",
             "define": "AR_FOUNDATION_REMOTE_INSTALLED"
+        },
+        {
+            "name": "com.kyrylokuzyk.arfoundationremote",
+            "expression": "4.12.0",
+            "define": "AR_FOUNDATION_REMOTE_4_12_0_OR_NEWER"
         }
     ],
     "noEngineReferences": false

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Installer
   m_EditorClassIdentifier: 
   optionalCompanionAppExtension: 
+  modifyAppId: 1

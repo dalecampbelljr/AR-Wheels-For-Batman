@@ -11,6 +11,10 @@ namespace ARFoundationRemote.Editor {
     [CustomEditor(typeof(ARFoundationRemoteInstaller), true), CanEditMultipleObjects]
     public class ARFoundationRemoteInstallerInspector : UnityEditor.Editor {
         public override void OnInspectorGUI() {
+            if (EditorApplication.isCompiling) {
+                return;
+            }
+            
             DrawDefaultInspector();
             showMethodsInInspector(targets);
         }
@@ -23,11 +27,19 @@ namespace ARFoundationRemote.Editor {
                 GUILayout.Space(16);
                 GUILayout.Label("AR Companion app", EditorStyles.boldLabel);
                 if (GUILayout.Button("Install AR Companion App", new GUIStyle(GUI.skin.button) {fontStyle = FontStyle.Bold})) {
-                    execute(() => CompanionAppInstaller.BuildAndRun(target.optionalCompanionAppExtension));
+                    AutoARFoundationFixes.Enabled = true;
+                    #if AR_FOUNDATION_REMOTE_INSTALLED
+                    if (FixesForEditorSupport.Apply()) {
+                        Debug.LogError($"{ARFoundationRemoteInstaller.displayName}: applying AR Foundation fixes... Please retry the AR Companion app installation.");
+                        return;
+                    }
+                    #endif
+                
+                    execute(() => CompanionAppInstaller.BuildAndRun(target.optionalCompanionAppExtension, target.modifyAppId));
                 }
 
                 if (GUILayout.Button("Build AR Companion and show in folder", new GUIStyle(GUI.skin.button))) {
-                    execute(() => CompanionAppInstaller.Build(target.optionalCompanionAppExtension));
+                    execute(() => CompanionAppInstaller.Build(target.optionalCompanionAppExtension, target.modifyAppId));
                 }
 
                 if (GUILayout.Button("Open Plugin Settings")) {
@@ -42,6 +54,7 @@ namespace ARFoundationRemote.Editor {
 
                 GUILayout.Space(16);
                 if (GUILayout.Button("Apply AR Foundation fixes")) {
+                    AutoARFoundationFixes.Enabled = true;
                     #if AR_FOUNDATION_REMOTE_INSTALLED
                         FixesForEditorSupport.Apply(true);
                     #endif
@@ -50,6 +63,7 @@ namespace ARFoundationRemote.Editor {
                 GUILayout.Space(16);
                 GUILayout.Label(ARFoundationRemoteInstaller.displayName, EditorStyles.boldLabel);
                 if (GUILayout.Button("Un-install Plugin", new GUIStyle(GUI.skin.button) {normal = {textColor = Color.red}})) {
+                    AutoARFoundationFixes.Enabled = false;
                     ARFoundationRemoteInstaller.UnInstallPlugin();
                 }
             } else {

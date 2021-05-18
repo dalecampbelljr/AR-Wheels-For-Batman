@@ -15,7 +15,9 @@ namespace ARFoundationRemote.Editor {
     public class ARFoundationRemoteInstaller : ScriptableObject {
         [Tooltip("Use this field if your platform require additional extension when making a build.")]
         [SerializeField] public string optionalCompanionAppExtension = "";
-        
+        [Tooltip("By default, the plugin modifies the package name while making the AR Companion build so it doesn't override your real app on your AR device.")]
+        [SerializeField] public bool modifyAppId = true;
+
         public const string pluginId = "com.kyrylokuzyk.arfoundationremote";
         public const string displayName = "AR Foundation Editor Remote";
         const string packagesFolderName = "Packages";
@@ -35,7 +37,17 @@ namespace ARFoundationRemote.Editor {
 
         public static void UnInstallPlugin() {
             #if AR_FOUNDATION_REMOTE_INSTALLED
-                FixesForEditorSupport.Undo();
+                #if AR_FOUNDATION_REMOTE_4_12_0_OR_NEWER
+                if (EditorUtility.IsDirty(Runtime.SessionRecordings.Instance)) {
+                    Debug.LogError($"{displayName}: please save the SessionRecordings.asset before uninstall to prevent file corruption.");
+                    return;
+                }
+                #endif
+            
+            if (FixesForEditorSupport.Undo()) {
+                Debug.LogError($"{displayName}: undoing AR Foundation fixes... Please press the 'Un-install Plugin' button again.");
+                return;
+            }
             #endif
             
             var listRequest = Client.List(true, false);
@@ -140,11 +152,12 @@ namespace ARFoundationRemote.Editor {
         }
 
         [Conditional("_")]
-        static void log(string msg) {
+        public static void log(string msg) {
             Debug.Log(msg);
         }
         
         public static void InstallPlugin(bool verbose) {
+            AutoARFoundationFixes.Enabled = true;
             checkDependencies(success => {
                 if (success) {
                     if (!Directory.Exists(sourceFolderName)) {
@@ -171,31 +184,69 @@ namespace ARFoundationRemote.Editor {
         static void moveFolder(string source, string dest) {
             Assert.IsTrue(Directory.Exists(source));
             Assert.IsFalse(Directory.Exists(dest));
-            
             Directory.Move(source, dest);
             File.Delete($"{source}.meta");
-            log("AssetDatabase.Refresh()");
+            #if UNITY_2020_1_OR_NEWER
+            Client.Resolve();
+            #elif UNITY_2019_4_OR_NEWER
+            var method = typeof(Client).GetMethod("Resolve", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic);
+            Assert.IsNotNull(method);
+            method.Invoke(null, null);
+            #else
             AssetDatabase.Refresh();
-            log(source);
-            log(dest);
+            #endif
         }
 
         static void addGitIgnore() {
-            var path = $"{dataPathParent}{slash}.gitignore";
-            if (File.Exists(path)) {
-                var text = File.ReadAllText(path);
-                string ignore = $"{packagesFolderName}/{pluginId}";
-                if (!text.Contains(ignore)) {
-                    text += $"\n{ignore}";
-                    File.WriteAllText(path, text);
+            var currentFolder = dataPathParent;
+            while (true) {
+                var path = $"{currentFolder}{slash}.gitignore";
+                if (File.Exists(path)) {
+                    log($"gitignore found at path {path}");
+                    var text = File.ReadAllText(path);
+                    if (!text.Contains(pluginId)) {
+                        text += $"\n{pluginId}";
+                        File.WriteAllText(path, text);
+                    }   
+                    
+                    return;
+                }
+
+                currentFolder = currentFolder.Parent;
+                if (currentFolder == null) {
+                    log("gitignore not found in any parent folder");
+                    return;
                 }
             }
         }
 
-
         public static void OnImport() {
             log("OnImport");
             InstallPlugin(false);
+        }
+
+        [UnityEditor.Callbacks.DidReloadScripts]
+        static void didReloadScripts() {
+            #if AR_FOUNDATION_REMOTE_INSTALLED
+            if (AutoARFoundationFixes.Enabled) {
+                FixesForEditorSupport.Apply();
+            } else {
+                log("skipping fixes");
+            }
+            #endif
+        }
+    }
+    
+    
+    public static class AutoARFoundationFixes {
+        const string key = "ARFondationRemote_auto_apply_fixes";
+        
+        public static bool Enabled {
+            get => EditorPrefs.GetBool(key, true);
+            set {
+                ARFoundationRemoteInstaller.log($"{key}: {value}");
+                EditorPrefs.SetBool(key, value);
+            }
         }
     }
 }
