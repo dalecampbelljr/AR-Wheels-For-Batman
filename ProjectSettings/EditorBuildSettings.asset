@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/_Main.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/__Main.unity
+    guid: cc432cb4f4ecfd448b211f64f04a1ded
   m_configObjects:
     com.unity.mars-ar-foundation-providers.xr_subsystem_settings: {fileID: 11400000,
       guid: 4a4453edbbabb764baa1a03c20d8d3e5, type: 2}
